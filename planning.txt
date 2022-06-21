@@ -1,0 +1,9 @@
+Project Idea:
+
+Its an application where users post event ideas and when a certain number of people are down for the event then the event will happen else it doesn't happen.
+This application helps people kickoff small events. Once an event has the minimum people going then it will appear in the events section of the app.
+
+Wireframe: https://whimsical.com/project-4-ga-2rzRnfuZGAaWw4pzVrYL66
+User Stories: https://trello.com/b/qh1mm6Y8/project-4-ga
+
+ERD: https://lucid.app/lucidchart/8a52c64b-666b-4c7f-973c-8c0e83d0ae00/edit?viewport_loc=-1104%2C-487%2C4453%2C2949%2C0_0&invitationId=inv_fc4b2bee-397b-4c96-847f-55cd89b11916#
