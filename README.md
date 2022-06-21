@@ -17,7 +17,7 @@
   <p align="center">
     <h3>An application to jump start events.</h3>
     <br />
-    <h1><a href="https://photofyproject.herokuapp.com/">View Live App »</a></h1>
+    <h1><a href="https://project4eventsapp.herokuapp.com/">View Live App »</a></h1>
     <br />
     <br />
     <a href="https://github.com/johnmccants002/project4/projects/1">Github Project Board</a>
@@ -29,6 +29,13 @@
     </a>
   </p>
 </div>
+
+   <br />
+   <p align="center"> <strong>Portfolio Page</strong> </p>
+    <br />
+
+![MainScreen](Screenshot-Project4.png)
+
 
 ## Technologies Used
 Project is created with:

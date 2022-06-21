@@ -26,9 +26,6 @@ export default function EventsPage({user, setUser}) {
                 
             )
 
-            console.log('These are the filteredEvents', filteredEvents)
-            console.log('These are the filteredEventIdeas', filteredEventIdeas)
-
             setEvents(filteredEvents);
             setEventIdeas(filteredEventIdeas);
         }
