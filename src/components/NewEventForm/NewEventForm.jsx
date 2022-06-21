@@ -3,9 +3,6 @@ import { Component } from 'react';
 import { useState } from 'react';
 import * as eventsAPI from '../../utilities/events-api'
 
-
-
-
 export default class NewEventForm extends Component {
 
     state = {
@@ -19,11 +16,9 @@ export default class NewEventForm extends Component {
         this.setState({ 
             [evt.target.name]: evt.target.value
         });
-        console.log(this.state)
     };
 
     handleSubmit = async (evt) => {
-        console.log("Submit tapped: ", evt)
         evt.preventDefault();
 
         const formData = {
@@ -43,10 +38,7 @@ export default class NewEventForm extends Component {
 
 
     render() {
-        console.log(this.props.navigate)
-       
         return (
-
             <div>
             <div className="form-container">
               <form autoComplete="off" onSubmit={this.handleSubmit}>

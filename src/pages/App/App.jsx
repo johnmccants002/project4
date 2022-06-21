@@ -21,10 +21,8 @@ export default function App() {
             <Route path="/events/new" element={<NewEventPage user={user} setUser={setUser} />} />      
             <Route path="/events" element={<EventsPage user={user} setUser={setUser}/>} />
             <Route path="/profile" element={<ProfilePage user={user} setUser={setUser}/>} />
-            <Route path="/eventIdeas" element ={<EventIdeasPage user={user} setUser={setUser}/>} />
-          
-            </Routes>
-
+            <Route path="/eventIdeas" element ={<EventIdeasPage user={user} setUser={setUser}/>} />         
+          </Routes>
         </>
         :
         <AuthPage setUser={setUser} />

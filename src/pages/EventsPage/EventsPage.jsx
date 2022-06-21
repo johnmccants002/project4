@@ -22,41 +22,33 @@ export default function EventsPage({user, setUser}) {
             let filteredEventIdeas = [];
             events.map((event, index) => 
                 event.attendees.length >= event.minAttendees ? 
-                    filteredEvents.push(event) : filteredEventIdeas.push(event)
-                
+                    filteredEvents.push(event) : filteredEventIdeas.push(event)               
             )
-
             setEvents(filteredEvents);
             setEventIdeas(filteredEventIdeas);
         }
         getAllEvents();
     }, []);
 
-
-
-
     return(
         <div>
-    <ButtonGroup className='mb-2'>
-    {radios.map((radio, idx) => (
-          <ToggleButton
-            key={idx}
-            id={`radio-${idx}`}
-            type="radio"
-            variant={'outline-success'}
-            name="radio"
-            value={radio.value}
-            checked={radioValue === radio.value}
-            onChange={(e) => setRadioValue(e.currentTarget.value)}
-          >
-            {radio.name}
-          </ToggleButton>
-        ))}
-
-    </ButtonGroup>
-
-        {radioValue == '1' ? <EventList events={events} user={user} setEvents={setEvents}/> : <EventIdeasList eventIdeas={eventIdeas} user={user} setEventIdeas={setEventIdeas} />}
-    
+            <ButtonGroup className='mb-2'>
+                {radios.map((radio, idx) => (
+                    <ToggleButton
+                        key={idx}
+                        id={`radio-${idx}`}
+                        type="radio"
+                        variant={'outline-success'}
+                        name="radio"
+                        value={radio.value}
+                        checked={radioValue === radio.value}
+                        onChange={(e) => setRadioValue(e.currentTarget.value)}
+                        >
+                        {radio.name}
+                    </ToggleButton>
+                    ))}
+            </ButtonGroup>
+            {radioValue == '1' ? <EventList events={events} user={user} setEvents={setEvents}/> : <EventIdeasList eventIdeas={eventIdeas} user={user} setEventIdeas={setEventIdeas} />}
         </div>
 
     );

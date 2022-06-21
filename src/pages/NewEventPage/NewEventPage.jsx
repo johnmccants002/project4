@@ -6,13 +6,10 @@ import { useNavigate } from 'react-router-dom';
 
 
 export default function NewEventPage({user, setUser}) {
-
     const navigate = useNavigate()
     return (
-    
         <>
         <NewEventForm user={user} navigate={navigate}/>
-    
         </>
     );
 }

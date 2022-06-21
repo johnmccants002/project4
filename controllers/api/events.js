@@ -15,10 +15,8 @@ module.exports = {
     addComment
 }
 async function createEvent(req, res) {
-    console.log("this is the req.body: ", req.body);
     try {
         const event = await Event.create(req.body.formData);
-        console.log("Event has been created")
         const events = await Event.find({})
         res.json(events)
 
@@ -31,17 +29,13 @@ async function createEvent(req, res) {
 
 async function getEvents(req, res) {
     const events = await Event.find({})
-    console.log("Events from API Controller: ", events);
 
     res.json(events)
-
 }
 
 async function attendEvent(req, res) {
-    console.log("This is the user id: ", req.user._id, req.params.eventId)
     const event = await Event.findById(req.params.eventId)
-    if (event.attendees.indexOf(req.user._id) > -1) {
-        console.log("Attendee already in event removing attendee")
+    if (event.attendees.indexOf(req.user._id) > -1) {     
         let newAttendees = [];
         for (i = 0; i < event.attendees.length; i++) {
             if (event.attendees[i] !== req.user._id) {
@@ -53,10 +47,8 @@ async function attendEvent(req, res) {
     
 
     } else {
-        console.log("New attendee")
         event.attendees.push(req.user._id)
-        event.save()
-    
+        event.save()  
     } 
 
     const events = await Event.find({})
@@ -100,9 +92,7 @@ async function deleteEvent(req, res) {
             }
         }
         res.json(filteredEvents)
-    }
-
-   
+    } 
 }
 
 async function getComments(req, res) {
@@ -118,13 +108,7 @@ async function getComments(req, res) {
 }
 
 async function addComment(req, res) {
-    console.log("This is the req.body.commentData", req.body.commentData)
-    console.log("this is the req.body.type", req.body.type)
-    console.log("This is req.params.eventId", req.params.eventId)
     const event = await Event.findById(req.params.eventId)
-    console.log('This is the event: ', event)
-    console.log("This is the commentData user", req.body.commentData.user)
-
 
     const comment = await Comment.create({
         user: req.body.commentData.user,
@@ -133,19 +117,17 @@ async function addComment(req, res) {
 
     event.addCommentToEvent(comment);
 
+    const updatedEvents = await Event.find({});
 
-
-            const updatedEvents = await Event.find({});
-
-            if (req.body.type == "Events") {
-                let filteredEventIdeas = [];
-                for (const event of updatedEvents) {
-                    if (event.attendees.length >= event.minAttendees) {
+        if (req.body.type == "Events") {
+            let filteredEventIdeas = [];
+            for (const event of updatedEvents) {
+                if (event.attendees.length >= event.minAttendees) {
                         filteredEventIdeas.push(event);
                     }
                 }
                 res.json(filteredEventIdeas);
-            } else if (req.body.type == "EventIdeas") {
+                } else if (req.body.type == "EventIdeas") {
                 let filteredEvents = [];
                 for (const event of updatedEvents) {
                     if (event.attendees.length < event.minAttendees) {
@@ -154,12 +136,6 @@ async function addComment(req, res) {
                 }
                 res.json(filteredEvents);
             }
-            console.log("Updated Events", updatedEvents);
-        
-    
-    
-  
-
 }
 
 async function deleteComment(req, res) {

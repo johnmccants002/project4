@@ -22,14 +22,10 @@ const eventSchema = new Schema({
 eventSchema.methods.addCommentToEvent = async function(commentId) {
     
     const event = this;
-    console.log('This is the commentId used: ', commentId);
     const comment = await mongoose.model('Comment').findById(commentId)
-    console.log("This is the comment from mongoose model: ", comment)
     event.comments.push(comment);
 
     return event.save()
-
-
 }
 
 module.exports =  mongoose.model('Event', eventSchema);

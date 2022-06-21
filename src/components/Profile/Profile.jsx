@@ -5,9 +5,8 @@ export default function Profile({user, setUser}) {
 
     return (
         <Card>
-        <h4>Email: {user.email}</h4>
-        <h4>Name: {user.name}</h4>
-
+            <h4>Email: {user.email}</h4>
+            <h4>Name: {user.name}</h4>
         </Card>
         
         
