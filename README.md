@@ -31,10 +31,12 @@
 </div>
 
    <br />
-   <p align="center"> <strong>Portfolio Page</strong> </p>
+   <p align="center"> <strong>Main Screen</strong> </p>
     <br />
 
-![MainScreen](Screenshot-Project4.png)
+<img src="https://i.imgur.com/AiLe8JL.png">
+
+<br />
 
 
 ## Technologies Used
