@@ -6,7 +6,7 @@ export default function EventIdeasPage({user, setUser}) {
 
     return ( 
     
-    <>Event Ideas Page</>
+    <>Event Ideas Page. Not used</>
     
     );
 }
